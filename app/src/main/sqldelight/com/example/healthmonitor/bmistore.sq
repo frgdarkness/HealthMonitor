@@ -1,0 +1,24 @@
+CREATE TABLE BMI (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    dateTime INTEGER NOT NULL,
+    weight INTEGER AS Int NOT NULL,
+    height INTEGER AS Int NOT NULL,
+    bmiValue REAL AS Float NOT NULL,
+    age INTEGER AS Int NOT NULL,
+    sex INTEGER AS Int NOT NULL
+);
+
+getAllBmi:
+SELECT * FROM BMI;
+
+addOrUpdate:
+INSERT OR REPLACE
+INTO BMI
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+deleteBmiById:
+DELETE FROM BMI
+WHERE id = :id;
+
+getLastBmi:
+SELECT * FROM BMI ORDER BY id DESC LIMIT 1;

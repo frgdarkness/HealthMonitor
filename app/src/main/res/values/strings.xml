@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">HealthMonitor</string>
+    <string name="text_healthy_weight">Healthy weight for the height (kg):</string>
+    <string name="healthy_weight_range">%d - %d</string>
+    <string name="bmi_value">%2f</string>
+    <string name="bmi_record_analysis">%s (BMI = %f) | %d cm</string>
+    <string name="date_range">%s - %s</string>
+    <string-array name="height_measure_unit">
+        <item>kg</item>
+    </string-array>
+
+    <string name="pressure_hypotension">Your blood pressure seems a little low. Please seek help from your doctor if it remains low for a long time.</string>
+    <string name="pressure_normal">Great! Your blood pressure is in healthy range. Just keep it!</string>
+    <string name="pressure_elevated">A bit high. It is recommended that you keep a regular record of your blood pressure and consider making changes to improve your health</string>
+    <string name="pressure_hypertension_stage1">Oh! Your blood pressure is higher than normal. If this happens 3 or more times, you\'d better see your doctor for some prescriptions</string>
+    <string name="pressure_hypertension_stage2">Attention! If this happens 3 or more result in the range, your doctor\'s advice and immediate medical treatment are necessary</string>
+    <string name="pressure_hypertensive">We are worried about you, please call emergency services immediately</string>
+
+    <string name="heart_rate_slow">Cautious! Your heart rate is too low.</string>
+    <string name="heart_rate_normal">Great! Your heart rate remains in the normal range.</string>
+    <string name="heart_rate_fast">Cautious! Your heart rate is higher than normal.</string>
+</resources>

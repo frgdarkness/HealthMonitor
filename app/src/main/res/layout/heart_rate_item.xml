@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/card_view_bg"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/cardViewHeartRate">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="22-12-2022 10:10"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:id="@+id/tvDateTime"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvPulseValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/ic_baseline_delete_24"
+                android:id="@+id/btnDelete"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_baseline_favorite_24"
+                app:layout_constraintTop_toBottomOf="@id/tvDateTime"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:id="@+id/imageHeart"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                app:layout_constraintTop_toTopOf="@id/imageHeart"
+                app:layout_constraintBottom_toBottomOf="@id/imageHeart"
+                app:layout_constraintStart_toEndOf="@id/imageHeart"
+                android:textSize="20sp"
+                android:layout_marginStart="6dp"
+                android:id="@+id/tvStatus"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvStatus"
+                app:layout_constraintStart_toStartOf="@id/tvStatus"
+                android:textSize="20sp"
+                android:text="Pulse: 80 BPM"
+                android:layout_marginTop="4dp"
+                android:id="@+id/tvPulseValue"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

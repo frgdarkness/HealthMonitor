@@ -1,0 +1,22 @@
+CREATE TABLE HeartRate (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    dateTime INTEGER NOT NULL,
+    pulse INTEGER AS Int NOT NULL,
+    age INTEGER AS Int NOT NULL,
+    sex INTEGER AS Int NOT NULL
+);
+
+addOrUpdate:
+INSERT OR REPLACE
+INTO HeartRate
+VALUES (?, ?, ?, ?, ?);
+
+getAllHeartRate:
+SELECT * FROM HeartRate;
+
+deleteHeartRateById:
+DELETE FROM HeartRate
+WHERE id = :id;
+
+getLastHeartRate:
+SELECT * FROM HeartRate ORDER BY id DESC LIMIT 1;
