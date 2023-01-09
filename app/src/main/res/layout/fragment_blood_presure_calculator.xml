@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.pressure.calculator.BloodPressureCalculatorFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/guildLineVertical"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardViewAnalysis"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"
+        android:id="@+id/cardViewPressure"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/card_view_bg">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardBackgroundColor="#665B5B5B"
+                app:cardCornerRadius="10dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/cardViewTime">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10:00"
+                    android:id="@+id/tvTime"
+                    android:textSize="14sp"
+                    android:layout_marginVertical="6dp"
+                    android:layout_marginHorizontal="8dp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardViewTime"
+                app:cardBackgroundColor="#665B5B5B"
+                app:cardCornerRadius="10dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/cardViewDate">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jan 5, 2023"
+                    android:id="@+id/tvDate"
+                    android:textSize="14sp"
+                    android:layout_marginVertical="6dp"
+                    android:layout_marginHorizontal="8dp"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Systolic"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/numberPickerSys"
+                app:layout_constraintEnd_toEndOf="@id/numberPickerSys"
+                app:layout_constraintTop_toBottomOf="@id/cardViewDate"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@id/numberPickerSys"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:id="@+id/tvSystolic"/>
+
+            <View
+                android:layout_width="54dp"
+                android:layout_height="1dp"
+                android:background="#ffff"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSystolic"
+                app:layout_constraintStart_toStartOf="@id/numberPickerSys"
+                app:layout_constraintEnd_toEndOf="@id/numberPickerSys"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diastolic"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/numberPickerDia"
+                app:layout_constraintEnd_toEndOf="@id/numberPickerDia"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSystolic"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="12dp"
+                android:id="@+id/tvDiastolic"/>
+
+            <View
+                android:layout_width="54dp"
+                android:layout_height="1dp"
+                android:background="#ffff"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDiastolic"
+                app:layout_constraintStart_toStartOf="@id/tvDiastolic"
+                app:layout_constraintEnd_toEndOf="@id/tvDiastolic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/numberPickerPulse"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSystolic"
+                android:text="Pulse"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/numberPickerPulse"
+                android:textAlignment="center"
+                android:layout_marginTop="12dp"
+                android:id="@+id/tvPulse"/>
+
+            <View
+                android:layout_width="54dp"
+                android:layout_height="1dp"
+                android:background="#ffff"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/tvPulse"
+                app:layout_constraintStart_toStartOf="@id/tvPulse"
+                app:layout_constraintEnd_toEndOf="@id/tvPulse"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/numberPickerSys"
+                app:layout_constraintEnd_toStartOf="@id/numberPickerPulse"
+                app:layout_constraintTop_toTopOf="@id/numberPickerSys"
+                android:id="@+id/numberPickerDia"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/numberPickerDia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/numberPickerSys"
+                android:id="@+id/numberPickerPulse"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/numberPickerDia"
+                app:layout_constraintTop_toBottomOf="@id/tvSystolic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/numberPickerSys"
+                android:paddingBottom="8dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_percent="0.22"
+        app:layout_constraintBottom_toTopOf="@id/cardViewTag"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/cardViewAnalysis"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/card_view_bg">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5"
+                android:id="@+id/guildLineAnalysis"/>
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="@id/tvPressureStatus"
+                app:layout_constraintBottom_toBottomOf="@id/tvPressureStatus"
+                android:src="@drawable/ic_baseline_fiber_manual_record_24"
+                app:layout_constraintEnd_toStartOf="@id/tvPressureStatus"
+                android:id="@+id/iconStatus"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iconStatus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/layoutRange"
+                android:text="Normal"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginStart="8dp"
+                android:id="@+id/tvPressureStatus"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/guildLineAnalysis"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="6dp"
+                android:orientation="horizontal"
+                android:id="@+id/layoutRange">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SYS 90 or DIA 60"
+                    android:textStyle="bold"
+                    android:layout_margin="6dp"
+                    android:textSize="16sp"
+                    android:id="@+id/tvPressureRange"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_baseline_info_24"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/guildLineAnalysis"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tvAnalysis"
+                android:text="Rest assured! Your blood pressure is in \ngreat condition, try to keep it!"
+                android:layout_margin="6dp"
+                android:paddingBottom="8dp"
+                android:textAlignment="center"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@id/btnSavePressure"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="4dp"
+        android:id="@+id/cardViewTag"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/card_view_bg">
+
+            <TextView
+                android:id="@+id/tvTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Tags:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTag">
+
+                <LinearLayout
+                    android:id="@+id/layoutEditTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTag">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="6dp"
+                        android:src="@drawable/ic_baseline_edit_24"
+                        app:tint="#00BCD4" />
+
+                    <TextView
+                        android:id="@+id/tvEditAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit/Add"
+                        android:textColor="#00BCD4"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tvTag"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTag" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:text="Save"
+        android:id="@+id/btnSavePressure"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
