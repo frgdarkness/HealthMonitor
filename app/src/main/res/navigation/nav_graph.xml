@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.healthmonitor.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_bmiFragment"
+            app:destination="@id/bmiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_heartRateFragment"
+            app:destination="@id/heartRateFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pressureFragment"
+            app:destination="@id/pressureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiFragment"
+        android:name="com.example.healthmonitor.ui.bmi.BmiFragment"
+        android:label="fragment_bmi"
+        tools:layout="@layout/fragment_bmi" >
+        <action
+            android:id="@+id/action_bmiFragment_to_bmiCalculatorFragment"
+            app:destination="@id/bmiCalculatorFragment" />
+        <action
+            android:id="@+id/action_bmiFragment_to_bmiHistoryFragment"
+            app:destination="@id/bmiHistoryFragment" />
+        <action
+            android:id="@+id/action_bmiFragment_to_bmiAlarmFragment"
+            app:destination="@id/bmiAlarmFragment" />
+        <action
+            android:id="@+id/action_bmiFragment_to_bmiTrendsFragment"
+            app:destination="@id/bmiTrendsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heartRateFragment"
+        android:name="com.example.healthmonitor.ui.heartrate.HeartRateFragment"
+        android:label="fragment_heart_rate"
+        tools:layout="@layout/fragment_heart_rate" >
+        <action
+            android:id="@+id/action_heartRateFragment_to_heartRateHistoryFragment"
+            app:destination="@id/heartRateHistoryFragment" />
+        <action
+            android:id="@+id/action_heartRateFragment_to_heartRateMeasureFragment"
+            app:destination="@id/heartRateMeasureFragment" />
+        <action
+            android:id="@+id/action_heartRateFragment_to_manualInputHeartRateFragment"
+            app:destination="@id/manualInputHeartRateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pressureFragment"
+        android:name="com.example.healthmonitor.ui.pressure.PressureFragment"
+        android:label="fragment_pressure"
+        tools:layout="@layout/fragment_pressure" >
+        <action
+            android:id="@+id/action_pressureFragment_to_bloodPressureHistoryFragment"
+            app:destination="@id/bloodPressureHistoryFragment" />
+        <action
+            android:id="@+id/action_pressureFragment_to_bloodPressureCalculatorFragment"
+            app:destination="@id/bloodPressureCalculatorFragment" />
+        <action
+            android:id="@+id/action_pressureFragment_to_pressureTrendsFragment"
+            app:destination="@id/pressureTrendsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiAnalysisFragment"
+        android:name="com.example.healthmonitor.ui.bmi.analysis.BmiAnalysisFragment"
+        android:label="fragment_bmi_analysis"
+        tools:layout="@layout/fragment_bmi_analysis" >
+        <action
+            android:id="@+id/action_bmiAnalysisFragment_to_bmiHistoryFragment"
+            app:destination="@id/bmiHistoryFragment"
+            app:popUpTo="@id/bmiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiCalculatorFragment"
+        android:name="com.example.healthmonitor.ui.bmi.calculator.BmiCalculatorFragment"
+        android:label="fragment_bmi_calculator"
+        tools:layout="@layout/fragment_bmi_calculator" >
+        <action
+            android:id="@+id/action_bmiCalculatorFragment_to_bmiAnalysisFragment"
+            app:destination="@id/bmiAnalysisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiHistoryFragment"
+        android:name="com.example.healthmonitor.ui.bmi.history.BmiHistoryFragment"
+        android:label="fragment_bmi_history"
+        tools:layout="@layout/fragment_bmi_history" />
+    <fragment
+        android:id="@+id/heartRateHistoryFragment"
+        android:name="com.example.healthmonitor.ui.heartrate.history.HeartRateHistoryFragment"
+        android:label="fragment_heart_rate_history"
+        tools:layout="@layout/fragment_heart_rate_history" />
+    <fragment
+        android:id="@+id/heartRateMeasureFragment"
+        android:name="com.example.healthmonitor.ui.heartrate.measure.HeartRateMeasureFragment"
+        android:label="fragment_heart_rate_measure"
+        tools:layout="@layout/fragment_heart_rate_measure" >
+        <action
+            android:id="@+id/action_heartRateMeasureFragment_to_manualInputHeartRateFragment"
+            app:destination="@id/manualInputHeartRateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiAlarmFragment"
+        android:name="com.example.healthmonitor.ui.bmi.alarm.BmiAlarmFragment"
+        android:label="fragment_bmi_alarm"
+        tools:layout="@layout/fragment_bmi_alarm" />
+    <fragment
+        android:id="@+id/bmiTrendsFragment"
+        android:name="com.example.healthmonitor.ui.bmi.trends.BmiTrendsFragment"
+        android:label="fragment_bmi_trends"
+        tools:layout="@layout/fragment_bmi_trends" />
+    <fragment
+        android:id="@+id/bloodPressureHistoryFragment"
+        android:name="com.example.healthmonitor.ui.pressure.history.BloodPressureHistoryFragment"
+        android:label="fragment_blood_pressure_history"
+        tools:layout="@layout/fragment_blood_pressure_history" />
+    <fragment
+        android:id="@+id/bloodPressureCalculatorFragment"
+        android:name="com.example.healthmonitor.ui.pressure.calculator.BloodPressureCalculatorFragment"
+        android:label="fragment_blood_presure_calculator"
+        tools:layout="@layout/fragment_blood_presure_calculator" >
+        <action
+            android:id="@+id/action_bloodPressureCalculatorFragment_to_pressureRangeFragment"
+            app:destination="@id/pressureRangeFragment" />
+        <action
+            android:id="@+id/action_bloodPressureCalculatorFragment_to_bloodPressureHistoryFragment"
+            app:destination="@id/bloodPressureHistoryFragment"
+            app:popUpTo="@id/pressureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pressureRangeFragment"
+        android:name="com.example.healthmonitor.ui.pressure.range.PressureRangeFragment"
+        android:label="fragment_pressure_range"
+        tools:layout="@layout/fragment_pressure_range" />
+    <fragment
+        android:id="@+id/manualInputHeartRateFragment"
+        android:name="com.example.healthmonitor.ui.heartrate.manual.ManualInputHeartRateFragment"
+        android:label="fragment_manual_input_heart_rate"
+        tools:layout="@layout/fragment_manual_input_heart_rate" >
+        <argument
+            android:name="pulse"
+            app:argType="integer"
+            android:defaultValue="70" />
+        <action
+            android:id="@+id/action_manualInputHeartRateFragment_to_heartRateHistoryFragment"
+            app:destination="@id/heartRateHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pressureTrendsFragment"
+        android:name="com.example.healthmonitor.ui.pressure.trends.PressureTrendsFragment"
+        android:label="fragment_pressure_trends"
+        tools:layout="@layout/fragment_pressure_trends" />
+</navigation>

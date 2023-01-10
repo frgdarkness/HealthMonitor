@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintTop_toTopOf="@id/tvPressureType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvPressureRange"
+        app:cardCornerRadius="10dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:src="@drawable/ic_baseline_favorite_24"
+        android:id="@+id/iconPressure"
+        app:tint="#CA7900" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconPressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Overweight"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:id="@+id/tvPressureType"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvPressureType"
+        android:text="BMI 16.0-16.9"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/iconPressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/tvPressureRange"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

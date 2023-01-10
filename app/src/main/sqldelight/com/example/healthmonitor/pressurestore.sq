@@ -1,0 +1,24 @@
+CREATE TABLE PRESSURE (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    dateTime INTEGER NOT NULL,
+    sys INTEGER NOT NULL,
+    dia INTEGER NOT NULL,
+    pulse INTEGER NOT NULL,
+    age INTEGER AS Int NOT NULL,
+    sex INTEGER AS Int NOT NULL
+);
+
+getAllPressure:
+SELECT * FROM PRESSURE;
+
+addOrUpdatePressure:
+INSERT OR REPLACE
+INTO PRESSURE
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+deletePressureById:
+DELETE FROM PRESSURE
+WHERE id = :id;
+
+getLastPressure:
+SELECT * FROM PRESSURE ORDER BY id DESC LIMIT 1;
